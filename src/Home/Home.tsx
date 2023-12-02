@@ -23,14 +23,11 @@ import {
 import ExpenseCard from "./ExpenseCard";
 import ExpensesLineChart from "./graphs/LineChart";
 
-type Props = {};
-
-const Home = (props: Props) => {
+const Home = () => {
   const [expenses, setExpenses] = useState<Expense[]>([]);
   const [monthGraphData, setMonthGraphData] = useState<LineGraphData[]>([]);
   const [yearGraphData, setYearGraphData] = useState<LineGraphData[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
   const displayedExpenses = expenses.slice(
     currentIndex,
     currentIndex + ITEMS_PER_PAGE
@@ -43,7 +40,6 @@ const Home = (props: Props) => {
         setExpenses(expenses);
         setMonthGraphData(convertMonthDataToLineData(expenses));
         setYearGraphData(convertYearDataToLineData(expenses));
-        setIsLoading(false);
       })
       .catch((error) => {
         console.error({ ERROR_EXPENSE_FETCH }, error);

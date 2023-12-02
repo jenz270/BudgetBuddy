@@ -1,6 +1,6 @@
 export const drawerStyles = {
     // You can extend the base styles
-    baseStyle: (props) => ({
+    baseStyle: () => ({
       dialog: {
         bg: 'background',
       },

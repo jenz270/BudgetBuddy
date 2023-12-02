@@ -11,9 +11,7 @@ import {
   USER_PROFILE_UPDATE_ERROR,
 } from "../utils/constants";
 
-type Props = {};
-
-const Profile = (props: Props) => {
+const Profile = () => {
   const auth = getAuth();
   const user = auth.currentUser;
 

@@ -4,11 +4,11 @@ export const buttonStyles = {
     baseStyle: {},
     sizes: {},
     variants: {
-        primary: (props) => ({
+        primary: () => ({
             bg: "secondary",
             color: "white",
             _hover: {
-                bg: mode(darken("secondary", 20), whiten("secondary", 20))(props),
+                bg: mode(darken("secondary", 20), whiten("secondary", 20)),
                 boxShadow: "md",
             }
         })

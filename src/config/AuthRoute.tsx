@@ -1,4 +1,4 @@
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { User, getAuth, onAuthStateChanged } from "firebase/auth";
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../config/Context";
@@ -11,7 +11,7 @@ const AuthRoute = ({ children }: Props) => {
   const auth = getAuth();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState<User>();
   const { setUserId } = useContext(UserContext);
   const { setUserName } = useContext(UserContext);
   const { setUserEmail } = useContext(UserContext);
@@ -32,7 +32,7 @@ const AuthRoute = ({ children }: Props) => {
     });
 
     return () => AuthCheck();
-  }, [auth, navigate]);
+  }, [auth, navigate, setUserEmail, setUserId, setUserName]);
 
   if (loading) return <p>loading...</p>;
 

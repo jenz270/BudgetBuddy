@@ -11,16 +11,14 @@ import {
   Bars3Icon,
   HomeIcon,
 } from "@heroicons/react/24/outline";
-import { useContext, useEffect, useState } from "react";
+import { SetStateAction, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import avatar from "../assets/avatar.png";
 import { UserContext } from "../config/Context";
 import SideBarItem from "./SideBarItem";
 import { ADMIN } from "../utils/constants";
 
-type Props = {};
-
-const Sidebar = (props: Props) => {
+const Sidebar = () => {
   const [navSize, setNavSize] = useState("large");
   const [activeItem, setActiveItem] = useState("");
   const { userName, userEmail } = useContext(UserContext);
@@ -52,7 +50,7 @@ const Sidebar = (props: Props) => {
     }
   };
 
-  const handleItemClick = (item) => {
+  const handleItemClick = (item: SetStateAction<string>) => {
     setActiveItem(item);
   };
 
@@ -88,7 +86,7 @@ const Sidebar = (props: Props) => {
           navSize={navSize}
           icon={HomeIcon}
           title="Home"
-          active={false} // May need to figure out how to tag this when its clicked, if not by default it shouldnt be highlighted
+          active={false}
           onClick={() => handleItemClick("Home")}
         />
         {/* EXPENSES */}

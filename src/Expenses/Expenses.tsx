@@ -32,9 +32,7 @@ import ExpenseTable from "./ExpenseTable";
 import AddExpensesDrawer from "./ExpensesDrawer/AddExpensesDrawer";
 import { UserContext } from "../config/Context";
 
-type Props = {};
-
-const Expenses = (props: Props) => {
+const Expenses = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [monthExpenses, setMonthExpenses] = useState<Expense[]>([]);

@@ -41,7 +41,6 @@ const LoginCard = ({
   onClickForgotPass,
   onClickCreate,
 }: Props) => {
-  const [authing, setAuthing] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [hasErrors, setHasErrors] = useState(false);
@@ -61,8 +60,6 @@ const LoginCard = ({
       return;
     }
 
-    setAuthing(true);
-
     signInWithEmailAndPassword(auth, email, password)
       .then((response) => {
         setUserId(response.user.uid);
@@ -71,7 +68,6 @@ const LoginCard = ({
       })
       .catch((error) => {
         console.log(error);
-        setAuthing(false);
         setHasErrors(true);
       });
   };
@@ -97,73 +93,71 @@ const LoginCard = ({
       </CardHeader>
 
       <CardBody>
-        <form onSubmit={signInWithEAndP}>
-          <Stack spacing="6" alignItems="center">
-            <GoogleSignInButton onClick={onClickGoogleSignIn} />
-            <Divider />
-            <Box width="100%">
-              <Text fontSize="lg" as="b" color="brand.300">
-                {EMAIL}
-              </Text>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                isInvalid={hasErrors}
-                value={email}
-                onChange={handleEmailEntered}
-                errorBorderColor="crimson"
-                placeholder={ENTER_EMAIL}
-                autoComplete="email"
-              />
+        <Stack spacing="6" alignItems="center">
+          <GoogleSignInButton onClick={onClickGoogleSignIn} />
+          <Divider />
+          <Box width="100%">
+            <Text fontSize="lg" as="b" color="brand.300">
+              {EMAIL}
+            </Text>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              isInvalid={hasErrors}
+              value={email}
+              onChange={handleEmailEntered}
+              errorBorderColor="crimson"
+              placeholder={ENTER_EMAIL}
+              autoComplete="email"
+            />
+          </Box>
+          <Box width="100%">
+            <Text fontSize="lg" as="b" color="brand.300">
+              {PASSWORD}
+            </Text>
+            <Input
+              id="password"
+              name="password"
+              isInvalid={hasErrors}
+              value={password}
+              type="password"
+              onChange={handlePasswordEntered}
+              errorBorderColor="crimson"
+              placeholder={ENTER_PASSWORD}
+              autoComplete="password"
+            />
+          </Box>
+          {hasErrors && (
+            <Box>
+              <Text color="primary">{LOGIN_ERROR}</Text>
             </Box>
-            <Box width="100%">
-              <Text fontSize="lg" as="b" color="brand.300">
-                {PASSWORD}
-              </Text>
-              <Input
-                id="password"
-                name="password"
-                isInvalid={hasErrors}
-                value={password}
-                type="password"
-                onChange={handlePasswordEntered}
-                errorBorderColor="crimson"
-                placeholder={ENTER_PASSWORD}
-                autoComplete="password"
-              />
-            </Box>
-            {hasErrors && (
-              <Box>
-                <Text color="primary">{LOGIN_ERROR}</Text>
-              </Box>
-            )}
-            <Box width="100%" textAlign="left">
-              <Button
-                color="secondary"
-                size="xs"
-                variant="link"
-                onClick={onClickForgotPass}
-              >
-                {FORGOT_PASSWORD}
-              </Button>
-            </Box>
-          </Stack>
-        </form>
+          )}
+          <Box width="100%" textAlign="left">
+            <Button
+              color="secondary"
+              size="xs"
+              variant="link"
+              onClick={onClickForgotPass}
+            >
+              {FORGOT_PASSWORD}
+            </Button>
+          </Box>
+        </Stack>
       </CardBody>
 
       <CardFooter>
         <HStack>
-          <Button
-            type="submit"
-            size="lg"
-            variant="primary"
-            fontSize="lg"
-            fontFamily="heading"
-            onClick={signInWithEAndP}
-          >
-            {LOGIN}
-          </Button>
+            <Button
+              type="submit"
+              size="lg"
+              variant="primary"
+              fontSize="lg"
+              fontFamily="heading"
+              onClick={signInWithEAndP}
+            >
+              {LOGIN}
+            </Button>
           <Text>Or</Text>
           <Button
             color="secondary"

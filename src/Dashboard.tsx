@@ -1,6 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
-import Sidebar from "./SideBar/SideBar"; // Assume this is your Sidebar component
+import Sidebar from "./SideBar/SideBar";
 
 const Dashboard = () => {
   return (

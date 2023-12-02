@@ -1,10 +1,3 @@
-{
-  /*
--  add token to the local storage to check if it is there then login else logout
-  - this way it will persist session.
-*/
-}
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Center } from "@chakra-ui/react";
@@ -13,20 +6,17 @@ import LoginCard from "./LoginCard";
 import CreateAccountCard from "./CreateAccountCard";
 
 const Login = () => {
-  const [authing, setAuthing] = useState(false);
   const [showLogin, setShowLogin] = useState(true);
   const auth = getAuth();
   const navigate = useNavigate();
 
   const signInWithGoogle = async () => {
-    setAuthing(true);
     signInWithPopup(auth, new GoogleAuthProvider())
       .then(() => {
         navigate("/");
       })
       .catch((error) => {
         console.log(error);
-        setAuthing(false);
       });
   };
 
