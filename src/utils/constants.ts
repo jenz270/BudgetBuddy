@@ -28,7 +28,7 @@ export const LOGIN_ERROR = "Sorry, we couldn't recognize that email or password 
 Please try again or reset your password if you've forgotten it.";
 export const EMAIL_REGEX = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 export const PWD_REGEX =
-  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+  /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{8,}$/;
 export const PASSWORD_ERROR_MSG =
   "The password must be at least 8 characters in length and must contain at least one numeric, one special character, and one lowercase letter or one uppercase letter.";
 export const ACCOUNT_CREATED = "Account has been created!";

@@ -45,6 +45,7 @@ const CreateAccountCard = ({ onClickBack }: Props) => {
   const [nameError, setNameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const [confirmPasswordError, setConfirmPasswordError] = useState(false);
+  const [createAccountError, setCreateAccountError] = useState<Error | null>(null);
   const [createdAccount, setCreatedAccount] = useState(false);
   const { setUserName } = useContext(UserContext);
 
@@ -76,6 +77,8 @@ const CreateAccountCard = ({ onClickBack }: Props) => {
   };
 
   const handleCreateAccountClicked = async () => {
+    setCreateAccountError(null);
+
     // do field checking
     const passedCheck = checkEmailPasswordFields();
     if (!passedCheck) {
@@ -97,7 +100,7 @@ const CreateAccountCard = ({ onClickBack }: Props) => {
         setCreatedAccount(true);
       })
       .catch((error) => {
-        console.log(error);
+        setCreateAccountError(error);
       });
   };
 
@@ -224,6 +227,11 @@ const CreateAccountCard = ({ onClickBack }: Props) => {
               errorBorderColor="crimson"
             />
           </Box>
+          {createAccountError && (
+              <Text color="crimson" pt={3}>
+                {createAccountError.message}
+              </Text>
+            )}
         </Stack>
       </CardBody>
 

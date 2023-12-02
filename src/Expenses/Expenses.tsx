@@ -50,7 +50,7 @@ const Expenses = () => {
         expenseDate.getFullYear() === now.getFullYear()
       );
     };
-    console.log(userId)
+
     getAllExpenses(userId)
       .then((expenses) => {
         setExpenses(expenses);
