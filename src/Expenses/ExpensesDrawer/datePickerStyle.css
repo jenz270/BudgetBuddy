@@ -1,0 +1,5 @@
+.datePicker .react-calendar__tile--active,
+.datePicker .react-calendar__tile--active:enabled:hover,
+.datePicker .react-calendar__tile--active:enabled:focus {
+  background-color: var(--chakra-colors-orange-200);
+}
