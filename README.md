@@ -5,10 +5,10 @@
 **Project Description:**
 Oversee your financial outgoings and gain insights into your spending habits with my intuitive expense management too! Designed to simplify personal finance, this application allows you to meticulously record and categorize your expenses, enabling a clear view of your financial activity on a month-by-month basis. Whether you're looking to tighten your budget, save for future goals, or simply stay informed about where your money goes, our tool provides a comprehensive, user-friendly platform for all your financial tracking needs!
 
-**Visuals:**
+**Screenshots:**
 
 - Budget Buddy Screenshots:
- [ ![Budget Buddy Screenshots](https://app.gemoo.com/share/image-annotation/589942640631279616?codeId=vJRmxVXpmGq21)](https://app.gemoo.com/share/image-annotation/589942646264229888?codeId=vJRmxVXpmGq21)
+https://app.gemoo.com/share/image-annotation/589942646264229888?codeId=vJRmxVXpmGq21
 
 ## Technologies Used
 - **Front-End**: React, TypeScript, Vite
