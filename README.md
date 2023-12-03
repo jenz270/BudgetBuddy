@@ -8,7 +8,7 @@ Oversee your financial outgoings and gain insights into your spending habits wit
 **Visuals:**
 
 - Budget Buddy Screenshots:
-  ![Budget Buddy Screenshots](https://app.gemoo.com/share/image-annotation/589942640631279616?codeId=vJRmxVXpmGq21)
+ [ ![Budget Buddy Screenshots](https://app.gemoo.com/share/image-annotation/589942640631279616?codeId=vJRmxVXpmGq21)](https://app.gemoo.com/share/image-annotation/589942646264229888?codeId=vJRmxVXpmGq21)
 
 ## Technologies Used
 - **Front-End**: React, TypeScript, Vite
