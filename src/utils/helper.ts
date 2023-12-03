@@ -82,3 +82,7 @@ export const convertYearDataToLineData = (expenses: Expense[]): LineGraphData[] 
 
     return lineGraphData.sort((a, b) => a.date.localeCompare(b.date));
 };
+
+export const sortByDate = (expenses: Expense[]): Expense[] => {
+    return expenses.sort((a, b) => b.date.getTime() - a.date.getTime());
+}

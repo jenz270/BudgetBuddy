@@ -27,7 +27,7 @@ import {
   MONTHLY,
   EXPENSES_DEFAULT,
 } from "../utils/constants";
-import { currentMonth, currentYear } from "../utils/helper";
+import { currentMonth, currentYear, sortByDate } from "../utils/helper";
 import ExpenseTable from "./ExpenseTable";
 import AddExpensesDrawer from "./ExpensesDrawer/AddExpensesDrawer";
 import { UserContext } from "../config/Context";
@@ -53,10 +53,11 @@ const Expenses = () => {
 
     getAllExpenses(userId)
       .then((expenses) => {
-        setExpenses(expenses);
+        const sortedExpenses = sortByDate(expenses)
+        setExpenses(sortedExpenses);
 
         // Filter current month expenses after fetching
-        const currentMonthExpenses = expenses.filter(isInCurrentMonth);
+        const currentMonthExpenses = sortedExpenses.filter(isInCurrentMonth);
         setMonthExpenses(currentMonthExpenses); // Update the month expenses state
 
         setIsLoading(false);
