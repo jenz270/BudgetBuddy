@@ -1,27 +1,78 @@
-# React + TypeScript + Vite
+# Budget Buddy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
 
-Currently, two official plugins are available:
+**Project Description:**
+Oversee your financial outgoings and gain insights into your spending habits with my intuitive expense management too! Designed to simplify personal finance, this application allows you to meticulously record and categorize your expenses, enabling a clear view of your financial activity on a month-by-month basis. Whether you're looking to tighten your budget, save for future goals, or simply stay informed about where your money goes, our tool provides a comprehensive, user-friendly platform for all your financial tracking needs!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Visuals:**
 
-## Expanding the ESLint configuration
+- Budget Buddy Screenshots:
+  ![Budget Buddy Screenshots](https://app.gemoo.com/share/image-annotation/589942640631279616?codeId=vJRmxVXpmGq21)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
+- **Front-End**: React, TypeScript, Vite
+- **Back-End & Database**: Firebase
+- **UI Design**: HeroIcons, React Router Dom
+- **Utilities**: React Calendar, Recharts, Google Auth
 
-- Configure the top-level `parserOptions` property like this:
+## Key Features
+- **Google Login**: Users can easily login and authenticate with Google sign in.
+- **Manual Expense Entry**: Easily add expenses manually and view them in a comprehensive list on the expenses page.
+- **Monthly Spending Graph**: Visualize your monthly financial performance with an intuitive graph.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Setup and Installation
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Prerequisites
+
+Before you can set up and run this web app, make sure you have the following prerequisites installed on your system:
+
+- [Node.js](https://nodejs.org/): You'll need Node.js to run JavaScript and npm (Node Package Manager) to manage project dependencies.
+
+### Installation Steps
+
+Follow these steps to set up and run this web app:
+
+1. **Clone the Repository:**
+   git clone <repository-url>
+2. **Go to the project directory**
+   cd <project-directory>
+3. **Add your own .env file containing firebase credentials**
+3. **Install Dependencies**
+   npm install
+4. **Run the App**
+   npm run dev
+
+## Usage
+
+To use this React web app, follow these steps:
+
+1. **Create an Account or Log In with Google Sign-In:**
+   - If you don't have an account, you can create one by following the registration process.
+   - Alternatively, you can log in directly using your Google account by clicking the Google Sign-In option.
+
+2. **Navigate to the Expenses Tab:**
+   - Once you are on the home page after logging in, find and click on the "Expenses" tab in the navigation menu.
+
+3. **Start Adding Expenses:**
+   - In the "Expenses" section, you can start adding your expenses.
+   - Click on the "Add Expense" button or a similar interface element to create a new expense entry.
+   - Fill in the details for the expense, such as the date, description, amount, and any other relevant information.
+   - Save the expense to record it.
+
+You can continue to add, edit, and manage your expenses as needed while using the app. Enjoy tracking your expenses!
+
+## Contact Information
+
+- **Name:** Jieni Hou
+- **LinkedIn:** [Jieni Hou's LinkedIn Profile](https://www.linkedin.com/in/jienihou)
+
+
+**Future Scope:**
+- **Receipt Scanning**: Implement a feature to add new expenses by capturing photos of receipts.
+- **CSV Import**: Enable uploading of expenses data through CSV files for easier bulk entry.
+- **Budget Goals**: Introduce the ability to set and track monthly or weekly budget goals.
+- **Advanced Graphs**: Expand the range of spending tracking graphs for more detailed financial insights.
+- **Share Progress**: Add functionality to share expense tracking progress with friends and family.
+- **Bill Reminders**: Implement reminders for upcoming bills or subscription renewals to avoid missed payments.
+- **Miscellaneous**: The mobile version of the app requires further refinement for optimal performance and user experience.
